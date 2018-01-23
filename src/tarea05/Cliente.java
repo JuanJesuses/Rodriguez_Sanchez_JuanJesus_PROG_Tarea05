@@ -77,4 +77,10 @@ public class Cliente {
 		return identificador;
 	}
 
+	@Override
+	public String toString() {
+		return "Cliente [nombre=" + nombre + ", dni=" + dni + ", direccion=" + direccion + ", localidad=" + localidad
+				+ ", codigoPostal=" + codigoPostal + ", identificador=" + identificador + "]";
+	}
+
 }
