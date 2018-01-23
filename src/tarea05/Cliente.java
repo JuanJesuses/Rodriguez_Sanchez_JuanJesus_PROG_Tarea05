@@ -53,4 +53,28 @@ public class Cliente {
 		return emparejador.matches();
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	public String getCodigoPostal() {
+		return codigoPostal;
+	}
+
+	public int getIdentificador() {
+		return identificador;
+	}
+
 }
