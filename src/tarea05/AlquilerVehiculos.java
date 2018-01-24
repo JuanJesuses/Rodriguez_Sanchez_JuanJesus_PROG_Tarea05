@@ -61,4 +61,21 @@ public class AlquilerVehiculos {
 			throw new ExcepcionAlquilerVehiculos ("Cupo de clientes lleno. Imposible añadir.");
 	}
 	
+	public void delCliente(String dni) {
+		int posicion = 0;
+		
+		for(int i=0; i<clientes.length; i++) {
+			if(clientes[i] != null && clientes[i].getDni().equals(dni)) {
+				posicion = i;
+				
+				for(int c = posicion; c<clientes.length-1; c++) {
+					clientes[c] = clientes[c+1];
+				}
+				clientes[clientes.length-1] = null;
+			}else {
+				throw new ExcepcionAlquilerVehiculos ("No existe ningún cliente con el DNI introducido.");
+			}
+		}
+	}
+	
 }
