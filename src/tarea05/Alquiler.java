@@ -25,4 +25,30 @@ public class Alquiler {
 		
 	}
 
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+
+	public int getDias() {
+		return dias;
+	}
+
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+
+	public Turismo getTurismo() {
+		return turismo;
+	}
+	
+	public double getPrecio() {
+		return PRECIO_DIA*getDias() + turismo.getCilindrada()/100;
+	}
+	
+	
+
 }
