@@ -44,4 +44,21 @@ public class AlquilerVehiculos {
 			return null;
 	}
 	
+	public void addCliente(Cliente cliente) {
+		int posicion = 0;
+		boolean posicionArray = false;
+		for (int i=0; i<clientes.length; i++) {
+			if(clientes[i] == null){
+				posicionArray = true;
+				posicion = i;
+			}else if (clientes[i].getDni().equals(cliente.getDni())) {
+				throw new ExcepcionAlquilerVehiculos ("Ya existe un cliente con el mismo DNI.");
+			}
+		}
+		if(posicionArray)
+			clientes[posicion] = cliente;
+		else
+			throw new ExcepcionAlquilerVehiculos ("Cupo de clientes lleno. Imposible añadir.");
+	}
+	
 }
