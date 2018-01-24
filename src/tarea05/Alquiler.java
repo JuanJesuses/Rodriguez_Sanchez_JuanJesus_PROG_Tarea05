@@ -61,7 +61,12 @@ public class Alquiler {
 		
 		return (int) dias+1;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Alquiler [fecha=" + fecha + ", dias=" + dias + ", FORMATO_FECHA=" + FORMATO_FECHA + ", MS_DIA=" + MS_DIA
+				+ ", PRECIO_DIA=" + PRECIO_DIA + ", cliente=" + cliente + ", turismo=" + turismo + ", disponible="
+				+ disponible + "]";
+	}
 
 }
