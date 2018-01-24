@@ -28,7 +28,7 @@ public class AlquilerVehiculos {
 		return alquileres;
 	}
 	
-	public String getCliente (String dni) {
+	public Cliente getCliente (String dni) {
 		int posicion = 0;
 		boolean clienteDni = false;
 		for (int i = 0; i < clientes.length; i++) {
@@ -39,7 +39,7 @@ public class AlquilerVehiculos {
 		}
 		
 		if(clienteDni)
-			return clientes[posicion].toString();
+			return clientes[posicion];
 		else
 			return null;
 	}
@@ -76,6 +76,23 @@ public class AlquilerVehiculos {
 				throw new ExcepcionAlquilerVehiculos ("No existe ningún cliente con el DNI introducido.");
 			}
 		}
+	}
+	
+	public Turismo getTurismo(String matricula) {
+		int posicion = 0;
+		boolean turismoMatricula = false;
+		
+		for(int i=0; i<turismos.length; i++) {
+			if(turismos[i].getMatricula().equals(matricula)) {
+				turismoMatricula = true;
+				posicion = i;
+			}
+		}
+		
+		if(turismoMatricula)
+			return turismos[posicion];
+		else
+			return null;
 	}
 	
 }
