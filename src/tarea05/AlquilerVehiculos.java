@@ -61,7 +61,7 @@ public class AlquilerVehiculos {
 			throw new ExcepcionAlquilerVehiculos ("Cupo de clientes completo. Imposible añadir.");
 	}
 	
-	public void delCliente(String dni) {
+	public void delCliente (String dni) {
 		int posicion = 0;
 		
 		for(int i=0; i<clientes.length; i++) {
@@ -110,6 +110,23 @@ public class AlquilerVehiculos {
 			turismos[posicion] = turismo;
 		else
 			throw new ExcepcionAlquilerVehiculos ("Cupo de turismos completo. Imposible añadir.");
+	}
+	
+	public void delTurismo (String matricula) {
+		int posicion = 0;
+		
+		for(int i=0; i<turismos.length; i++) {
+			if(turismos[i] != null && turismos[i].getMatricula().equals(matricula)) {
+				posicion = i;
+				
+				for(int c = posicion; c<turismos.length-1; c++) {
+					turismos[c] = turismos[c+1];
+				}
+				turismos[turismos.length-1] = null;
+			}else {
+				throw new ExcepcionAlquilerVehiculos ("No existe ningún turismo con la matrícula introducida.");
+			}
+		}
 	}
 	
 	
