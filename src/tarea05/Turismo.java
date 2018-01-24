@@ -11,4 +11,35 @@ public class Turismo {
 	private int cilindrada;
 	private boolean disponible;
 	
+	public Turismo (Turismo turismo) {
+		
+		matricula = turismo.getMatricula();
+		marca = turismo.getMarca();
+		modelo = turismo.getModelo();
+		cilindrada = turismo.getCilindrada();
+		
+	}
+	
+	public Turismo (String matricula, String marca, String modelo, int cilindrada) {
+		
+		if (compruebaMatricula(matricula))
+			this.matricula = matricula;
+		else
+			throw new ExcepcionAlquilerVehiculos ("La matrícula introducida no es válida.");
+		
+		this.marca = marca;
+		this.modelo = modelo;
+		
+		if (cilindrada > 0)
+			this.cilindrada = cilindrada;
+		else
+			throw new ExcepcionAlquilerVehiculos ("La cilidrada no puede ser negativa.");
+	}
+	
+	private boolean compruebaMatricula(String matricula) {
+		Pattern patron = Pattern.compile("[0-9]{4}[B-DF-HJ-NP-TV-Z]{3}");
+		Matcher emparejador = patron.matcher(matricula);
+		
+		return emparejador.matches();
+	}
 }
