@@ -49,6 +49,19 @@ public class Alquiler {
 		return PRECIO_DIA*getDias() + turismo.getCilindrada()/100;
 	}
 	
+	public void close() {
+		Date entrega = new Date();
+		dias = difDias(entrega, fecha);
+		disponible = true;
+	}
+	
+	private int difDias(Date fechaRecogida, Date fechaEntrega) {
+		long milisegundos = fechaRecogida.getTime() - fechaEntrega.getTime();
+		long dias = milisegundos / MS_DIA;
+		
+		return (int) dias+1;
+	}
+	
 	
 
 }
