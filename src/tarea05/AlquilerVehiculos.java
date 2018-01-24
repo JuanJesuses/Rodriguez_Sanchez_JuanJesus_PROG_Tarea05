@@ -28,6 +28,20 @@ public class AlquilerVehiculos {
 		return alquileres;
 	}
 	
-	
+	public String getCliente (String dni) {
+		int posicion = 0;
+		boolean clienteDni = false;
+		for (int i = 0; i < clientes.length; i++) {
+			if(clientes[i].getDni().equals(dni)) {
+				clienteDni = true;
+				posicion = i;
+			}
+		}
+		
+		if(clienteDni)
+			return clientes[posicion].toString();
+		else
+			return null;
+	}
 	
 }
