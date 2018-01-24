@@ -146,6 +146,19 @@ public class AlquilerVehiculos {
 			alquileres[posicion] = new Alquiler(cliente, turismo);
 	}
 	
-	
+	public void closeAlquiler(Cliente cliente, Turismo turismo) {
+		int posicion = 0;
+		boolean posicionClose = false;
+		
+		for (int i=0; i<alquileres.length; i++) {
+			if(alquileres[i].getCliente() == cliente && alquileres[i].getTurismo() == turismo){
+				posicion = i;
+				posicionClose = true;
+			}
+		}
+		
+		if(posicionClose)
+			alquileres[posicion].close();
+	}
 	
 }
