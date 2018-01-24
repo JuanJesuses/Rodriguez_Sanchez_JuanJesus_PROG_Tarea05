@@ -129,6 +129,23 @@ public class AlquilerVehiculos {
 		}
 	}
 	
+	public void openAlquiler (Cliente cliente, Turismo turismo) {
+		int posicion = 0;
+		boolean posicionOpen = false;
+		
+		for (int i=0; i<alquileres.length; i++) {
+			if(alquileres[i] == null && alquileres[i].getTurismo().getDisponible()) {
+				posicionOpen = true;
+				posicion = i;
+			}else {
+				throw new ExcepcionAlquilerVehiculos ("El vehiculo no está disponible.");
+			}
+		}
+		
+		if(posicionOpen)
+			alquileres[posicion] = new Alquiler(cliente, turismo);
+	}
+	
 	
 	
 }
