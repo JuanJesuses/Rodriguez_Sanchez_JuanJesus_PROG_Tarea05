@@ -2,9 +2,15 @@ package tarea05;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * 
+ * @author Juan Jesus
+ *
+ */
 public class Cliente {
-	
+	/**
+	 * 
+	 */
 	private String nombre;
 	private String dni;
 	private String direccion;
@@ -13,6 +19,10 @@ public class Cliente {
 	private int identificador;
 	private static int numClientes;
 	
+	/**
+	 * Constructor copia
+	 * @param cliente
+	 */
 	public Cliente (Cliente cliente) {
 		nombre = cliente.getNombre();
 		dni = cliente.getDni();
@@ -21,7 +31,18 @@ public class Cliente {
 		codigoPostal = cliente.getCodigoPostal();
 	}
 	
+	/**
+	 * Constructor con parámetros
+	 * @param nombre
+	 * @param dni
+	 * @param direccion
+	 * @param localidad
+	 * @param codigoPostal
+	 */
 	public Cliente (String nombre, String dni, String direccion, String localidad, String codigoPostal) {
+		
+		numClientes++;
+		identificador = numClientes;
 		this.nombre = nombre;
 		
 		if (compruebaDni(dni))
@@ -39,6 +60,12 @@ public class Cliente {
 		
 	}
 	
+	/**
+	 * Método que devuelve un boolean si el patrón introducido 
+	 * para el código postal es correcto.
+	 * @param codigoPostal
+	 * @return boolean
+	 */
 	private boolean compruebaCodigoPostal (String codigoPostal) {
 		Pattern patron = Pattern.compile("[0-9]{5}");
 		Matcher emparejador = patron.matcher(codigoPostal);
@@ -46,6 +73,12 @@ public class Cliente {
 		return emparejador.matches();
 	}
 	
+	/**
+	 * Método que devuelve un boolean si el patrón introducido 
+	 * para el DNI es correcto
+	 * @param dni
+	 * @return boolean
+	 */
 	private boolean compruebaDni(String dni) {
 		Pattern patron = Pattern.compile("[0-9]{8}[A-Z]");
 		Matcher emparejador = patron.matcher(dni);
@@ -79,8 +112,8 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [nombre=" + nombre + ", dni=" + dni + ", direccion=" + direccion + ", localidad=" + localidad
-				+ ", codigoPostal=" + codigoPostal + ", identificador=" + identificador + "]";
+		return "-:Cliente:- nombre: " + nombre + " - dni: " + dni + " - direccion: " + direccion + " - localidad: " + localidad
+				+ " - codigoPostal: " + codigoPostal + " - identificador: " + identificador + "";
 	}
 
 }
