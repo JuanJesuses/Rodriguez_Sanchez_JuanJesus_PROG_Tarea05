@@ -61,13 +61,13 @@ public class AlquilerVehiculos {
 	public Cliente getCliente (String dni) {
 		int posicion = 0; // Para guardar la posición del array que coincida con el dni encontrado en el array
 		boolean clienteDni = false; // Booleano que se establecerá en true si hay coincidencia
+		
 		for (int i = 0; i < clientes.length; i++) {
 			if(clientes[i] != null && clientes[i].getDni().equals(dni)) {
 				clienteDni = true;
 				posicion = i;
 			}
 		}
-		
 		if(clienteDni)
 			return clientes[posicion];
 		else
@@ -81,6 +81,7 @@ public class AlquilerVehiculos {
 	public void addCliente(Cliente cliente) {
 		int posicion = 0;
 		boolean posicionArray = false;
+		
 		for (int i=0; i<clientes.length; i++) {
 			if(clientes[i] == null){ // Si la posición está vacía preparamos variables para añadir cliente al array
 				posicionArray = true;
@@ -103,6 +104,7 @@ public class AlquilerVehiculos {
 	public void delCliente (String dni) {
 		int posicion = 0;
 		boolean posicionArray = false;
+		
 		for(int i=0; i<clientes.length; i++) {
 			if(clientes[i] != null && clientes[i].getDni().equals(dni)) {
 				posicionArray = true;
@@ -136,7 +138,6 @@ public class AlquilerVehiculos {
 				posicion = i;
 			}
 		}
-		
 		if(turismoMatricula)
 			return turismos[posicion];
 		else
@@ -150,6 +151,7 @@ public class AlquilerVehiculos {
 	public void addTurismo (Turismo turismo) {
 		int posicion = 0;
 		boolean posicionArray = false;
+		
 		for (int i=0; i<turismos.length; i++) {
 			if(turismos[i] == null){
 				posicionArray = true;
@@ -172,6 +174,7 @@ public class AlquilerVehiculos {
 	public void delTurismo (String matricula) {
 		int posicion = 0;
 		boolean posicionArray = false;
+		
 		for(int i=0; i<turismos.length; i++) {
 			if(turismos[i] != null && turismos[i].getMatricula().equals(matricula)) {
 				posicionArray = true;
@@ -197,7 +200,7 @@ public class AlquilerVehiculos {
 	public void openAlquiler (Cliente cliente, Turismo turismo) {
 		int posicion = 0;
 		boolean posicionOpen = false;
-				
+		
 		for (int i=0; i<alquileres.length; i++) {
 			if(alquileres[i] == null){
 				posicionOpen = true;

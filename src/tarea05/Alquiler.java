@@ -113,8 +113,8 @@ public class Alquiler {
 
 	@Override
 	public String toString() {
-		return "Alquiler [fecha=" + fecha + ", dias=" + dias + ", MS_DIA=" + MS_DIA	+ ", PRECIO_DIA=" + PRECIO_DIA + ", cliente=" + cliente + ", turismo=" + turismo + ", disponible="
-				+ disponible + "]";
+		return "--:Alquiler:-- \nfecha: " + FORMATO_FECHA.format(getFecha()) + " DÍAS: " + dias + "\nPRECIO: " + getPrecio() + "\n" + cliente + "\n" + turismo + 
+			   "\nDISPONIBLE: " + disponible + "";
 	}
 
 }

@@ -116,8 +116,8 @@ public class Turismo {
 
 	@Override
 	public String toString() {
-		return "-:Turismo:- matricula: " + matricula + " - marca: " + marca + " - modelo: " + modelo + " - cilindrada: "
-				+ cilindrada + " - disponible: " + disponible + "";
+		return "TURISMO: \nMATRÍCULA: " + matricula + " MARCA: " + marca + " MODELO: " + modelo + " CILINDRADA: "
+				+ cilindrada + " DISPONIBLE: " + disponible + "";
 	}
 	
 		

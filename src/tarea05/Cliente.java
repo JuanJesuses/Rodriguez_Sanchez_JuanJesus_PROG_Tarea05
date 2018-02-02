@@ -8,9 +8,7 @@ import java.util.regex.Pattern;
  *
  */
 public class Cliente {
-	/**
-	 * 
-	 */
+	
 	private String nombre;
 	private String dni;
 	private String direccion;
@@ -24,11 +22,13 @@ public class Cliente {
 	 * @param cliente
 	 */
 	public Cliente (Cliente cliente) {
+		
 		nombre = cliente.getNombre();
 		dni = cliente.getDni();
 		direccion = cliente.getDireccion();
 		localidad = cliente.getLocalidad();
 		codigoPostal = cliente.getCodigoPostal();
+		
 	}
 	
 	/**
@@ -112,8 +112,8 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "-:Cliente:- nombre: " + nombre + " - dni: " + dni + " - direccion: " + direccion + " - localidad: " + localidad
-				+ " - codigoPostal: " + codigoPostal + " - identificador: " + identificador + "";
+		return "CLIENTE: \nNOMBRE: " + nombre + " DNI: " + dni + " DIRECCIÓN: " + direccion + " LOCALIDAD: " + localidad
+				+ " CÓDIGO POSTAL: " + codigoPostal + " IDENTIFICADOR: " + identificador + "";
 	}
 
 }
